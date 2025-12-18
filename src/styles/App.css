@@ -1,0 +1,110 @@
+/*Nombres de colores*/
+:root {
+  --soft-blush: hsla(13, 73%, 91%, 1);
+  --blaze-orange: hsla(19, 100%, 52%, 1);
+  --smoky-rose: hsla(347, 13%, 44%, 1);
+  --mauve-shadow: hsla(341, 19%, 38%, 1);
+  --mauve-shadow-2: hsla(327, 12%, 33%, 1);
+  --soft-blush-tr: hsla(13, 73%, 91%, 0.5);
+  --blaze-orange-tr: hsla(19, 100%, 52%, 0.5);
+  --smoky-rose-tr: hsla(347, 13%, 44%, 0.5);
+  --mauve-shadow-tr: hsla(341, 19%, 38%, 0.5);
+  --mauve-shadow-2-tr: hsla(327, 12%, 33%, 0.5);
+}
+
+/*Estilos base*/
+#root {
+  max-width: 1280px;
+  margin: 0;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--soft-blush);
+  color: var(--smoky-rose);
+  height: 100%;
+}
+
+html,
+body,
+#root {
+  height: fit-content;
+  margin: 0;
+}
+
+/*Estilos de los títulos*/
+h1 {
+  color: var(--soft-blush);
+  filter: drop-shadow(0 5px 5px var(--blaze-orange-tr));
+  transition: all 0.3s ease;
+  padding: 30px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  user-select: none;
+  background-color: var(--mauve-shadow-tr);
+  position: relative;
+
+}
+a:hover {
+  color: var(--mauve-shadow);
+}
+h2 {
+  color: var(--mauve-shadow);
+  user-select: none;
+}
+h3,
+h4,
+h5,
+h6,
+p {
+  user-select: none;
+  color: var(--mauve-shadow-2);
+}
+
+/*Estilos del contenedor principal*/
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 50px;
+}
+
+/*Estilos de la sección de inicio*/
+.img-logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+  user-select: none;
+    /*Aquí se debe de poner la imagen principal de los apartamentos para colocarla destrás del logo*/
+  background-image: "#";
+}
+
+.img-logo {
+  user-select: none;
+  width: 70%;
+  height: auto;
+  filter: drop-shadow(0 5px 5px var(--mauve-shadow-tr));
+  transition: all 0.3s ease;
+  background-color: var(--soft-blush-tr);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+@media screen and (470px <= width <= 768px) {
+  .img-logo {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .img-logo {
+    width: 40%;
+  }
+  
+}
+

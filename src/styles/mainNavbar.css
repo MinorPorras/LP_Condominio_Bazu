@@ -1,0 +1,124 @@
+.main-navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background-color: var(--smoky-rose);
+  color: var(--smoky-rose);
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+
+  width: fit-content;
+  height: 100vh;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: top;
+  gap: 10px;
+
+  transition: background-color 0.3s ease, width 0.6s ease;
+}
+
+.main-navbar-header.collapsed {
+  width: 30px;
+  background-color: var(--smoky-rose-tr);
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.collapse-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--soft-blush-tr);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.main-navbar {
+  margin-top: 50px;
+  height: max-content;
+}
+
+.main-navbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  height: max-content;
+}
+.main-navbar-item {
+  color: var(--soft-blush);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
+  border-radius: 5px;
+  list-style: none;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid transparent;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  user-select: none;
+}
+.main-navbar-item::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: transparent;
+  transition: width 0.3s;
+  margin-top: 5px;
+  transform: translateY(-100%);
+  grid-column: span 2;
+}
+.main-navbar-item:hover::after {
+  width: 100%;
+  background: var(--blaze-orange);
+  border-radius: 5px;
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+
+.main-navbar-item:hover {
+  background-color: var(--mauve-shadow-2);
+  color: var(--soft-blush);
+  border-radius: 5px;
+  border: 1px solid var(--soft-blush);
+}
+
+.main-navbar-header.collapsed .main-navbar-item {
+  font-size: 0;
+  padding: 15px 0;
+  gap: 0;
+  background-color: var(--smoky-rose-tr);
+}
+.main-navbar-header.collapsed .main-navbar-item::after {
+  display: none;
+}
+.main-navbar-header.collapsed .main-navbar-item:hover {
+  background-color: var(--mauve-shadow-tr);
+  color: var(--soft-blush);
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.main-navbar-header.collapsed .main-navbar-item:hover::after {
+  display: none;
+}

@@ -1,0 +1,19 @@
+# Bloquea las reglas para todos los rastreadores
+User-agent: *
+
+# Directorios internos comunes que Google no necesita indexar
+Disallow: /node_modules/
+Disallow: /temp/
+Disallow: /private/
+Disallow: /dist/
+
+# Si por alguna razón incluyes un archivo de configuración en la raíz:
+Disallow: /config.js
+
+# Si usas scripts internos de prueba:
+Disallow: /tests/
+
+# ----------------------------------------------------
+# Referencia al Sitemap (¡CRUCIAL!)
+# Esta línea le dice a todos los rastreadores dónde está tu mapa.
+Sitemap: https://www.tudominioalquiler.com/sitemap.xml
