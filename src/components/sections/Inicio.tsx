@@ -1,4 +1,4 @@
-import logoNegro from "../../assets/darkIcons/img_logo_condo_bazu_negro.webp";
+import logoNegro from "../../assets/img/img_logo_condo_bazu_negro.webp";
 
 export function Inicio() {
   return (
@@ -10,7 +10,7 @@ export function Inicio() {
           className="img-logo"
         />
       </header>
-      
+
       <h1>Alquiler de apartamentos en Bello Horizonte, Escazú.</h1>
     </section>
   );
