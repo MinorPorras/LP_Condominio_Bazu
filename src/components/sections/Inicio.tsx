@@ -2,7 +2,7 @@ import logoNegro from "../../assets/img/img_logo_condo_bazu_negro.webp";
 
 export function Inicio() {
   return (
-    <section>
+    <section id="home-section">
       <header className="img-logo-container">
         <img
           src={logoNegro}

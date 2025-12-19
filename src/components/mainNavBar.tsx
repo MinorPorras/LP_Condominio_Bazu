@@ -4,14 +4,12 @@ import { TAB_ICONS, TABS } from "../constants.ts";
 import { IconMenu } from "./icons/menu/iconMenu.tsx";
 import { IconMenuCollapsed } from "./icons/menu/iconMenuCollapsed.tsx";
 import { IconHome } from "./icons/menu/iconHome.tsx";
+import useMainNavBarItem from "../hooks/useSelectedNavBarItem.tsx";
 
 export function MainNavBar() {
-  const [selectedNavBarItem, setSelectedNavBarItem] = useState("Home");
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const { selectedNavBarItem, handleNavbarItemClick } = useMainNavBarItem();
 
-  const handleItemClick = (item: string) => {
-    setSelectedNavBarItem(item);
-  };
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
     <header className={`main-navbar-header ${isCollapsed ? "collapsed" : ""}`}>
@@ -19,24 +17,33 @@ export function MainNavBar() {
         className="collapse-button"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
-        {isCollapsed ? <IconMenu className="Icon-Menu"/> : <IconMenuCollapsed className="Icon-Menu-Collapsed"/>}
+        {isCollapsed ? (
+          <IconMenu className="Icon-Menu" />
+        ) : (
+          <IconMenuCollapsed className="Icon-Menu-Collapsed" />
+        )}
       </button>
       <nav className="main-navbar">
-        <ul className="main-navbar-list">
+        <div className="main-navbar-list">
           {TABS.map((tab) => {
-            const IconComponent = TAB_ICONS[tab] || IconHome;
+            const IconComponent =
+              TAB_ICONS.find((icon) => icon.key === tab)?.value || IconHome;
+            const anchor =
+              TAB_ICONS.find((icon) => icon.key === tab)?.anchor ||
+              "home-section";
             return (
               <MainNavBarItem
                 key={tab}
                 text={tab}
+                anchor={anchor}
                 selectedItem={selectedNavBarItem}
-                handleItemClick={handleItemClick}
+                handleItemClick={handleNavbarItemClick}
                 isCollapsed={isCollapsed}
                 IconComponent={IconComponent}
               />
             );
           })}
-        </ul>
+        </div>
       </nav>
     </header>
   );

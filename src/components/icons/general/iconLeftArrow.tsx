@@ -7,36 +7,7 @@ export function IconLeftArrow({
   color = "#292D32",
 }: IconProps) {
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 24 24"
-      fill="none"
-      className={className}
-      stroke={color}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <path
-          opacity="0.4"
-          d="M10.7702 8.52002L15.8202 12.31V17.92C15.8202 18.88 14.6602 19.36 13.9802 18.68L8.80023 13.51C7.97023 12.68 7.97023 11.33 8.80023 10.5L10.7702 8.52002Z"
-          fill={color}
-        />{" "}
-        <path
-          d="M15.8195 6.07993V12.3099L10.7695 8.51993L13.9795 5.30993C14.6595 4.63993 15.8195 5.11993 15.8195 6.07993Z"
-          fill={color}
-        />{" "}
-      </g>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" className={className} height={height} stroke={color} width={width} viewBox="0 0 24 24"><g id="SVGRepo_iconCarrier">{" "}<path d="m10.77 8.52 5.05 3.79v5.61c0 .96-1.16 1.44-1.84.76L8.8 13.51a2.13 2.13 0 0 1 0-3.01z" fill={color} opacity=".4"/>{" "}<path d="M15.82 6.08v6.23l-5.05-3.79 3.21-3.21c.68-.67 1.84-.19 1.84.77" fill={color}/>{" "}</g></svg>
   );
 }
 

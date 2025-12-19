@@ -2,33 +2,6 @@ import type { IconProps } from "../../../types/iconTypes";
 
 export function IconLocation({ width = 24, height = 24, className = "", color = "#292D32" }: IconProps) {
   return (
-    <svg
-      width={width}
-      height={height}
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke={color}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></g>
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <path
-          opacity="0.4"
-          d="M20.6191 8.45C19.5691 3.83 15.5391 1.75 11.9991 1.75C11.9991 1.75 11.9991 1.75 11.9891 1.75C8.45912 1.75 4.41912 3.82 3.36912 8.44C2.19912 13.6 5.35912 17.97 8.21912 20.72C9.27912 21.74 10.6391 22.25 11.9991 22.25C13.3591 22.25 14.7191 21.74 15.7691 20.72C18.6291 17.97 21.7891 13.61 20.6191 8.45Z"
-          fill={color}
-        ></path>{" "}
-        <path
-          d="M11.9996 13.4602C13.7393 13.4602 15.1496 12.0499 15.1496 10.3102C15.1496 8.57046 13.7393 7.16016 11.9996 7.16016C10.2599 7.16016 8.84961 8.57046 8.84961 10.3102C8.84961 12.0499 10.2599 13.4602 11.9996 13.4602Z"
-          fill={color}
-        ></path>{" "}
-      </g>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" className={className} height={height} stroke={color} width={width} viewBox="0 0 24 24"><g id="SVGRepo_iconCarrier">{" "}<path d="M20.62 8.45c-1.05-4.62-5.08-6.7-8.62-6.7h-.01c-3.53 0-7.57 2.07-8.62 6.69-1.17 5.16 1.99 9.53 4.85 12.28A5.44 5.44 0 0 0 12 22.25c1.36 0 2.72-.51 3.77-1.53 2.86-2.75 6.02-7.11 4.85-12.27" fill={color} opacity=".4"/>{" "}<path d="M12 13.46a3.15 3.15 0 1 0 0-6.3 3.15 3.15 0 0 0 0 6.3" fill={color}/>{" "}</g></svg>
   );
 }

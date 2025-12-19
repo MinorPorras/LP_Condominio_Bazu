@@ -1,7 +1,7 @@
 export function Servicios() {
   return (
-    <section>
-      <h2>Descubra los servicios y comodidades ofrecidos:</h2>
+    <section id="services-section">
+      <h2 className="title blaze-orange-background">Descubra los servicios y comodidades que ofrecemos:</h2>
     </section>
   );
 }

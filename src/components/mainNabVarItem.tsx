@@ -1,27 +1,26 @@
+import type { mainNavbarItem } from "../types/generalTypes";
+
 export function MainNavBarItem({
   text,
+  anchor,
   selectedItem,
   handleItemClick,
   isCollapsed,
   IconComponent,
-}: {
-  text: string;
-  selectedItem: string;
-  handleItemClick: (item: string) => void;
-  isCollapsed: boolean;
-  IconComponent: React.ElementType;
-}) {
+}: mainNavbarItem) {
   return (
-    <li
+    <a
       onClick={() => handleItemClick(text)}
       id={text}
+      href={"#" + anchor}
       className={`main-navbar-item ${selectedItem === text ? "active" : ""} ${
         isCollapsed ? "collapsed" : ""
       }`}
+      aria-current={selectedItem === text ? "page" : undefined}
     >
       <IconComponent color="#F9DFD7" className="main-navbar-icon" />
       {text}
-    </li>
+    </a>
   );
 }
 

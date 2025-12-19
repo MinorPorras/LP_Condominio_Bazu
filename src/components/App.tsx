@@ -12,7 +12,7 @@ import MainNavBar from "./mainNavBar";
 function App() {
   return (
     <>
-      <MainNavBar />
+      <MainNavBar/>
 
       <main className="main-content">
         <Inicio />

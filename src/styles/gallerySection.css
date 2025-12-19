@@ -1,0 +1,103 @@
+#gallery-section {
+  width: 100%;
+  margin-bottom: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+  user-select: none;
+}
+
+#gallery-section p{
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    text-align: center;
+    margin: 0 20px 20px 20px;
+    display: block;
+    width: 100%;
+    user-select: none;
+}
+
+#condo-carousel {
+  width: 90%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 10%;
+  border-radius: 10px;
+  border: 3px double var(--blaze-orange);
+  filter: drop-shadow(0 0px 20px var(--blaze-orange));
+  overflow: hidden;
+  user-select: none;
+}
+
+.carousel-item {
+  height: 50vh;
+  background: linear-gradient(
+    to right,
+    var(--mauve-shadow),
+    var(--smoky-rose)
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#condo-carousel .carousel-control-custom {
+  filter: drop-shadow(0 2px 2px var(--mauve-shadow-tr));
+  transition: all 0.3s ease;
+  background-color: var(--mauve-shadow-tr);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  user-select: none;
+  margin: auto 5px auto 5px;
+  border: 3px double var(--soft-blush);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.carousel-control-custom:hover {
+  background-color: var(--mauve-shadow-tr);
+  border: 3px double var(--soft-blush);
+  transition: all 0.3s ease;
+}
+
+.carousel-caption {
+  background-color: var(--soft-blush-tr);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--soft-blush);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  color: var(--soft-blush);
+  filter: drop-shadow(0 5px 5px var(--mauve-shadow-tr));
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  #condo-carousel {
+    width: 90%;
+    height: 40vh;
+  }
+
+  .carousel-item {
+    height: 40vh;
+  }
+}
