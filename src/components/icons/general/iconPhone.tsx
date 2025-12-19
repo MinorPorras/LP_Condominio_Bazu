@@ -1,4 +1,4 @@
-import type { IconProps } from "../../../types/iconTypes";
+import type { IconProps } from "../../../types/generalTypes";
 
 export function IconPhone({
   width = 24,
