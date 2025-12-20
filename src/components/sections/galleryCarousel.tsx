@@ -1,17 +1,29 @@
 import IconLeftArrow from "../icons/general/iconLeftArrow";
 import { IconRightArrow } from "../icons/general/iconRightArrow";
-import { carouselItems } from "../../constants.ts";
+import type { carouseItem } from "../../types/generalTypes.ts";
+import { mainCarouselItems } from "../../constants.ts";
 
-export function GalleryCarousel() {
+export function GalleryCarousel({
+  carouselItems = mainCarouselItems,
+  idName = "condo-carousel",
+}: {
+  carouselItems?: carouseItem[];
+  idName: string;
+}) {
   return (
-    <div id="condo-carousel" className="carousel carousel-dark slide">
+    <div
+      id={idName}
+      data-bs-ride="carousel"
+      data-bs-interval="5000"
+      className="carousel carousel-dark slide"
+    >
       {carouselItems.length > 2 && (
         <div className="carousel-indicators">
           {carouselItems.map((_, index) => (
             <button
               key={index}
               type="button"
-              data-bs-target="#condo-carousel"
+              data-bs-target={`#${idName}`}
               data-bs-slide-to={index}
               className={index === 0 ? "active" : ""}
               aria-current={index === 0 ? "true" : "false"}
@@ -25,7 +37,6 @@ export function GalleryCarousel() {
           <div
             key={index}
             className={`carousel-item ${index === 0 ? "active" : ""}`}
-            data-bs-interval="10000"
           >
             <img
               src={image.src}
@@ -33,7 +44,6 @@ export function GalleryCarousel() {
               alt={image.alt}
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>{image.title}</h5>
               <p>{image.description}</p>
             </div>
           </div>
@@ -42,7 +52,7 @@ export function GalleryCarousel() {
       <button
         className="carousel-control-prev carousel-control-custom"
         type="button"
-        data-bs-target="#condo-carousel"
+        data-bs-target={`#${idName}`}
         data-bs-slide="prev"
       >
         <IconLeftArrow color="#fff" />
@@ -50,7 +60,7 @@ export function GalleryCarousel() {
       <button
         className="carousel-control-next carousel-control-custom"
         type="button"
-        data-bs-target="#condo-carousel"
+        data-bs-target={`#${idName}`}
         data-bs-slide="next"
       >
         <IconRightArrow color="#fff" />

@@ -7,21 +7,22 @@ import Ubicacion from "./sections/ubicacion";
 import Servicios from "./sections/Servicios";
 import { Faq } from "./sections/faq";
 import MainNavBar from "./mainNavBar";
-
+import { ApartmentGallery } from "./sections/apartment";
 
 function App() {
   return (
     <>
-      <MainNavBar/>
+      <MainNavBar />
 
       <main className="main-content">
         <Inicio />
         <Galeria />
         <Servicios />
+        <ApartmentGallery />
         <SobreNosotros />
         <Contacto />
         <Ubicacion />
-        <Faq/>
+        <Faq />
       </main>
     </>
   );

@@ -12,6 +12,7 @@ export type TABS_TYPE =
   | "Inicio"
   | "Galería"
   | "Sobre nosostros"
+  | "Apartamentos"
   | "Servicios"
   | "Contacto"
   | "¿Donde encontrarnos?"
@@ -21,6 +22,7 @@ export type ANCHOR_IDS =
   | "home-section"
   | "gallery-section"
   | "services-section"
+  | "apartment-section"
   | "about-us-section"
   | "contact-section"
   | "location-section"
@@ -29,7 +31,6 @@ export type ANCHOR_IDS =
 export interface carouseItem {
   src: string;
   alt: string;
-  title: string;
   description: string;
 }
 

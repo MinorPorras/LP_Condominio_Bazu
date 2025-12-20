@@ -10,13 +10,45 @@
   user-select: none;
 }
 
-#gallery-section p{
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    text-align: center;
-    margin: 0 20px 20px 20px;
-    display: block;
-    width: 100%;
-    user-select: none;
+#apartment-section {
+  width: 100%;
+  margin-bottom: 10vh;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 2.5fr;
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+  user-select: none;
+}
+
+#apartment-gallery-title {
+  grid-column: 1 / -1;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  margin: 0 20px 10px 20px;
+  display: block;
+  width: 100%;
+  user-select: none;
+}
+
+#apartment-section p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
+  margin: 0 20px 20px 20px;
+  padding-right: 20px;
+  display: block;
+  width: 100%;
+  user-select: none;
+}
+
+#gallery-section p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
+  margin: 0 20px 20px 20px;
+  display: block;
+  width: 100%;
+  user-select: none;
 }
 
 #condo-carousel {
@@ -33,13 +65,24 @@
   user-select: none;
 }
 
-.carousel-item {
+#apartment-carousel {
+  width: 90%;
   height: 50vh;
-  background: linear-gradient(
-    to right,
-    var(--mauve-shadow),
-    var(--smoky-rose)
-  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 10%;
+  border-radius: 10px;
+  border: 3px double var(--mauve-shadow-2);
+  filter: drop-shadow(0 0px 20px var(--mauve-shadow-2));
+  overflow: hidden;
+  user-select: none;
+}
+
+.carousel-item {
+  width: 100%;
+  max-height: 400px;
+  background: linear-gradient(to right, var(--mauve-shadow), var(--smoky-rose));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,7 +98,8 @@
   transition: transform 0.3s ease;
 }
 
-#condo-carousel .carousel-control-custom {
+#condo-carousel .carousel-control-custom,
+#apartment-carousel .carousel-control-custom {
   filter: drop-shadow(0 2px 2px var(--mauve-shadow-tr));
   transition: all 0.3s ease;
   background-color: var(--mauve-shadow-tr);
@@ -86,15 +130,47 @@
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
-  .gallery-section {
-    grid-template-columns: 1fr;
+@media screen and (600px > width <= 768px) {
+  #gallery-section {
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: auto auto auto;
+  }
+
+  #apartment-carousel {
+    width: 90%;
+    height: 40vh;
   }
 
   #condo-carousel {
     width: 90%;
     height: 40vh;
+  }
+
+  .carousel-item {
+    height: 40vh;
+  }
+}
+
+@media screen and (width <= 600px) {
+  #gallery-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  #apartment-section{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  #apartment-carousel {
+    width: 95%;
+    height: 40vh;
+  }
+
+  #condo-carousel {
+    width: 95%;
+    height: 30vh;
+    margin: 0 10px;
   }
 
   .carousel-item {
