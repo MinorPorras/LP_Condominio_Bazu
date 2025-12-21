@@ -2,7 +2,7 @@
   width: 100%;
   margin-bottom: 10vh;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: auto auto;
   justify-items: center;
   align-items: center;
@@ -67,7 +67,7 @@
 
 #apartment-carousel {
   width: 90%;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,12 +77,22 @@
   filter: drop-shadow(0 0px 20px var(--mauve-shadow-2));
   overflow: hidden;
   user-select: none;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.carousel-inner {
+  height: 100%;
 }
 
 .carousel-item {
   width: 100%;
-  max-height: 400px;
-  background: linear-gradient(to right, var(--mauve-shadow), var(--smoky-rose));
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--mauve-shadow-2);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -130,50 +140,45 @@
   transition: all 0.3s ease;
 }
 
-@media screen and (600px > width <= 768px) {
+@media screen and (600px <= width <= 768px) {
   #gallery-section {
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto auto auto;
   }
 
-  #apartment-carousel {
+  #apartment-carousel, #condo-carousel {
     width: 90%;
-    height: 40vh;
-  }
-
-  #condo-carousel {
-    width: 90%;
-    height: 40vh;
   }
 
   .carousel-item {
-    height: 40vh;
+    height: 100%;
   }
 }
 
-@media screen and (width <= 600px) {
+@media screen and (max-width: 600px) {
   #gallery-section {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
   }
 
-  #apartment-section{
+  #apartment-section {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto 3fr;
   }
 
   #apartment-carousel {
     width: 95%;
     height: 40vh;
+    grid-row: 3;
   }
 
   #condo-carousel {
     width: 95%;
-    height: 30vh;
+    height: 40vh;
     margin: 0 10px;
   }
 
   .carousel-item {
-    height: 40vh;
+    height: 100%;
   }
 }

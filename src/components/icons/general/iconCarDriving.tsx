@@ -1,4 +1,4 @@
-import type { IconProps } from "../../../types/iconTypes";
+import type { IconProps } from "../../../constants/iconTypes";
 
 export function IconCarDriving({
   width = 24,

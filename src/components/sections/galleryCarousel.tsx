@@ -1,7 +1,7 @@
 import IconLeftArrow from "../icons/general/iconLeftArrow";
 import { IconRightArrow } from "../icons/general/iconRightArrow";
-import type { carouseItem } from "../../types/generalTypes.ts";
-import { mainCarouselItems } from "../../constants.ts";
+import type { carouseItem } from "../../constants/generalTypes.ts";
+import { mainCarouselItems } from "../../constants/carouselItems.ts";
 
 export function GalleryCarousel({
   carouselItems = mainCarouselItems,

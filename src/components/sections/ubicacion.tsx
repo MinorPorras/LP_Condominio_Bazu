@@ -1,11 +1,15 @@
 import IconWaze from "../icons/general/iconWaze";
+import { WAZE_LOCATION_URL } from "../../constants/urlConstants";
 
 export function Ubicacion() {
   return (
     <section id="location-section">
-      <h2 className="title-center blaze-orange-background">Ubicación estratégica con acceso sencillo a San José y Escazú</h2>
+      <h2 className="title-center spanFull blaze-orange-background">
+        Ubicación estratégica con acceso sencillo a San José y Escazú
+      </h2>
       <p>
-        Disfrute de la calma y tranquilidad en una zona con fácil acceso a muchas servicios
+        Disfrute de la calma y tranquilidad en una zona con fácil acceso a
+        muchas zonas concurridas
       </p>
       <div className="maps-iframe-container">
         <iframe
@@ -26,12 +30,13 @@ export function Ubicacion() {
             Llega a nosotros con waze:
           </h3>
           <p>
-            Puede encontrar nuestra dirección en el siguiente enlace: 
+            Puede encontrar nuestra dirección en el siguiente enlace:
+            <br />
             <a
               className="general-link blaze-orange-text"
-              href="https://maps.app.goo.gl/ugBuyBVgV7xCeb1PA"
+              href={WAZE_LOCATION_URL}
             >
-               ¡Encuentranos aquí!
+              ¡Encuentranos aquí!
             </a>
           </p>
         </div>

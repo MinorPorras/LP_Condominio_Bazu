@@ -1,4 +1,4 @@
-import { apartmentCarouselItems } from "../../constants";
+import {apartmentCarouselItems} from "../../constants/carouselItems";
 import { GalleryCarousel } from "./galleryCarousel";
 
 export function ApartmentGallery() {

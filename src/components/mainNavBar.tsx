@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MainNavBarItem } from "./mainNabVarItem.tsx";
-import { TAB_ICONS, TABS } from "../constants.ts";
+import { TAB_ICONS, TABS } from "../constants/tabs.ts";
 import { IconMenu } from "./icons/menu/iconMenu.tsx";
 import { IconMenuCollapsed } from "./icons/menu/iconMenuCollapsed.tsx";
 import { IconHome } from "./icons/menu/iconHome.tsx";

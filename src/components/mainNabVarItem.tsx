@@ -1,4 +1,4 @@
-import type { mainNavbarItem } from "../types/generalTypes";
+import type { mainNavbarItem } from "../constants/generalTypes";
 
 export function MainNavBarItem({
   text,

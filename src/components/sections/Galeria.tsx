@@ -1,5 +1,5 @@
 import { GalleryCarousel } from "./galleryCarousel";
-import { mainCarouselItems } from "../../constants.ts";
+import { mainCarouselItems } from "../../constants/carouselItems.ts";
 
 
 export function Galeria() {

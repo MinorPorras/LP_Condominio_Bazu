@@ -54,7 +54,7 @@ a:hover {
 }
 h2 {
   padding: 30px;
-  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  font-size: clamp(1.5rem, 4.5vw, 3rem);
   user-select: none;
   position: relative;
   font-family: "Montserrat", sans-serif;
@@ -170,25 +170,6 @@ p {
   margin: auto;
 }
 
-.maps-iframe-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10vh;
-  user-select: none;
-  background-color: var(--soft-blush-tr);
-  padding: 10px;
-  gap: 10px;
-}
-.maps-iframe{
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 5px 5px var(--mauve-shadow-tr));
-  transition: all 0.3s ease;
-  flex-grow: 2;
-}
-
 .icon-sz-1{
   width: 30px;
   height: 30px
@@ -206,8 +187,7 @@ p {
   }
 
   .title-left,
-  .title-right,
-  .title-center {
+  .title-right{
     width: 70%;
   }
 }

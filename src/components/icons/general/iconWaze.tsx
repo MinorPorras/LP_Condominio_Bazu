@@ -1,4 +1,4 @@
-import type { IconProps } from "../../../types/generalTypes";
+import type { IconProps } from "../../../constants/generalTypes";
 
 export function IconWaze({
   width = 24,
