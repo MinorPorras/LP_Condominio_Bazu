@@ -1,18 +1,11 @@
 import { IconWhatsApp } from "../icons/general/whatsappIcon";
+import type {CR_PHONE_NUMBER, NUMBER_COUNTRY_CODE} from '../../constants/generalTypes'
 
-
-export function WhatsappContactSection() {
-  const phoneNumber = "83602296";
-  const message =
-    "Hola! Me interesa conocer más información sobre Condominio Bazú";
-  const whastappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
-
+export function WhatsappContactSection({ countryCode, phoneNumber }: { countryCode: NUMBER_COUNTRY_CODE; phoneNumber: CR_PHONE_NUMBER }) {
   return (
-    <>
-      <h2>¡Consulte la disponibilidad y agende su visita!</h2>
-      <p>Contáctenos por medio de whastapp en el siguiente número:</p>
-      <IconWhatsApp />
-      <a href={whastappUrl} target="_blank" rel="noopener noreferrer" />
-    </>
+    <div className="whatsapp-num-container">
+      <IconWhatsApp className="icon-sz-5" />
+      <h3 className="numberText">{countryCode} {phoneNumber}</h3>
+    </div>
   );
 }

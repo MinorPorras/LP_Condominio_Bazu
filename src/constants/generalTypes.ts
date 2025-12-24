@@ -53,3 +53,8 @@ export type MAIN_NAVBAR_HOOKS_PROPS = {
   selectedNavBarItem: string;
   handleNavbarItemClick: (item: string) => void;
 };
+
+export type NUMBER_COUNTRY_CODE = `+${number}`
+
+export type CR_PHONE_NUMBER = `${string}-${string}`
+

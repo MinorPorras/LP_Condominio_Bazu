@@ -1,5 +1,6 @@
 #gallery-section {
   width: 100%;
+  height: 100vh;
   margin-bottom: 10vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -12,6 +13,7 @@
 
 #apartment-section {
   width: 100%;
+  height: 100vh;
   margin-bottom: 10vh;
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -140,14 +142,21 @@
   transition: all 0.3s ease;
 }
 
-@media screen and (600px <= width <= 768px) {
+@media screen and (min-width: 1000px) {
+  #gallery-section,
+  #apartment-section {
+    grid-template-rows: 1fr 6fr;
+  }
+  #apartment-carousel,
+  #condo-carousel {
+    height: 70vh;
+  }
+}
+
+@media screen and (800px <= width <= 999px) {
   #gallery-section {
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto auto auto;
-  }
-
-  #apartment-carousel, #condo-carousel {
-    width: 90%;
   }
 
   .carousel-item {
@@ -155,26 +164,26 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 799px) {
   #gallery-section {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 1fr 1fr 6fr;
   }
 
   #apartment-section {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto 3fr;
+    grid-template-rows: 1fr 1fr 4fr;
   }
 
   #apartment-carousel {
     width: 95%;
-    height: 40vh;
+    height: 50vh;
     grid-row: 3;
   }
 
   #condo-carousel {
     width: 95%;
-    height: 40vh;
+    height: 60vh;
     margin: 0 10px;
   }
 
