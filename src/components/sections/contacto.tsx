@@ -10,7 +10,7 @@ export function Contacto() {
   const phoneNumber: CR_PHONE_NUMBER = "8388-3316";
   const message =
     "Hola! Me interesa conocer más información sobre Condominio Bazú";
-  const whastappUrl = `https://api.whatsapp.com/send?phone=${countryCode}{urlPhoneNumber}&text=${message}`;
+  const whastappUrl = `https://api.whatsapp.com/send?phone=${urlPhoneNumber}&text=${message}`;
 
   const clickhandler = () => {
     window.open(whastappUrl, "_blank");
