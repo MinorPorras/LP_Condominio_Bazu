@@ -1,4 +1,4 @@
-import type { IconProps } from "../../../constants/iconTypes";
+import type { IconProps } from "../../../constants/generalTypes";
 
 export function IconHome({ width = 24, height = 24, className = "", color = "#292D32"}: IconProps) {
   return (
