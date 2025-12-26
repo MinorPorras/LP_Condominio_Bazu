@@ -1,4 +1,4 @@
-import type { IconProps } from "../../../constants/iconTypes";
+import type { IconProps } from "../../../constants/generalTypes";
 
 export const IconCamera = ({
   width = 24,
