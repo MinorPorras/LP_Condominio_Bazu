@@ -1,4 +1,4 @@
-import type { IconProps } from "../../../constants/iconTypes";
+import type { IconProps } from "../../../constants/generalTypes";
 
 export function IconMedalStar({
   width = 24,
