@@ -11,7 +11,6 @@ export interface IconProps {
 export type TABS_TYPE =
   | "Inicio"
   | "Galería"
-  | "Sobre nosostros"
   | "Apartamentos"
   | "Servicios"
   | "Contacto"
@@ -20,13 +19,12 @@ export type TABS_TYPE =
 
 export type ANCHOR_IDS =
   | "home-section"
-  | "gallery-section"
-  | "services-section"
-  | "apartment-section"
-  | "about-us-section"
-  | "contact-section"
-  | "location-section"
-  | "faq-section";
+  | "gallery-section-title"
+  | "services-section-title"
+  | "apartment-section-title"
+  | "contact-section-title"
+  | "location-section-title"
+  | "faq-section-title";
 
 export interface carouseItem {
   src: string;
@@ -57,4 +55,15 @@ export type MAIN_NAVBAR_HOOKS_PROPS = {
 export type NUMBER_COUNTRY_CODE = `+${number}`
 
 export type CR_PHONE_NUMBER = `${string}-${string}`
+
+export type SUPPORTED_LANGS_ABR = "es" | "en"
+
+export type SUPPORTED_LANGS_CPL = "Español" | "English"
+
+export const SUPPORTED_LANGS: Record<SUPPORTED_LANGS_ABR, SUPPORTED_LANGS_CPL> = {
+  es: "Español",
+  en: "English"
+}
+
+
 

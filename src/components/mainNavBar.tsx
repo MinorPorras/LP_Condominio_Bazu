@@ -43,6 +43,9 @@ export function MainNavBar() {
               />
             );
           })}
+          <div className="language-selector">
+            <p>Español</p>
+          </div>
         </div>
       </nav>
     </header>

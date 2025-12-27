@@ -6,7 +6,6 @@ import { IconCamera } from "../components/icons/menu/iconCamera";
 import { IconHome } from "../components/icons/menu/iconHome";
 import { IconLocation } from "../components/icons/general/iconLocation";
 import { IconMedalStar } from "../components/icons/menu/iconMedalStar";
-import { IconPeople } from "../components/icons/general/iconPeople";
 import { IconPhone } from "../components/icons/general/iconPhone";
 import { IconFaq } from "../components/icons/menu/iconFaq";
 import { IconApartment } from "../components/icons/menu/iconApartment";
@@ -16,7 +15,6 @@ export const TABS: TABS_TYPE[] = [
   "Galería",
   "Servicios",
   "Apartamentos",
-  "Sobre nosostros",
   "Contacto",
   "¿Donde encontrarnos?",
   "Preguntas frecuentes",
@@ -31,37 +29,32 @@ export const TAB_ICONS: TABS_ICONS_TYPE[] = [
   {
     key: "Galería",
     value: IconCamera,
-    anchor: "gallery-section",
+    anchor: "gallery-section-title",
   },
   {
     key: "Servicios",
     value: IconMedalStar,
-    anchor: "services-section",
+    anchor: "services-section-title",
   },
   {
     key: "Apartamentos",
     value: IconApartment,
-    anchor: "apartment-section",
-  },
-  {
-    key: "Sobre nosostros",
-    value: IconPeople,
-    anchor: "about-us-section",
+    anchor: "apartment-section-title",
   },
   {
     key: "Contacto",
     value: IconPhone,
-    anchor: "contact-section",
+    anchor: "contact-section-title",
   },
   {
     key: "¿Donde encontrarnos?",
     value: IconLocation,
-    anchor: "location-section",
+    anchor: "location-section-title",
   },
   {
     key: "Preguntas frecuentes",
     value: IconFaq,
-    anchor: "faq-section",
+    anchor: "faq-section-title",
   },
 ];
 

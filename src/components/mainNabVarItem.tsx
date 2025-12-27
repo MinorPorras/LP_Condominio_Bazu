@@ -13,13 +13,15 @@ export function MainNavBarItem({
       onClick={() => handleItemClick(text)}
       id={text}
       href={"#" + anchor}
-      className={`main-navbar-item ${selectedItem === text ? "active" : ""} ${
-        isCollapsed ? "collapsed" : ""
-      }`}
+      className={`main-navbar-item button-64 ${
+        selectedItem === text ? "active" : ""
+      } ${isCollapsed ? "collapsed" : ""}`}
       aria-current={selectedItem === text ? "page" : undefined}
     >
-      <IconComponent color="#F9DFD7" className="main-navbar-icon" />
-      {text}
+      <span>
+        <IconComponent color="#F9DFD7" className="main-navbar-icon" />
+        {text}
+      </span>
     </a>
   );
 }

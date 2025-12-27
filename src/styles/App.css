@@ -15,6 +15,8 @@
 
   --mauve-shadow-2: hsla(327, 12%, 33%, 1);
   --mauve-shadow-2-tr: hsla(327, 12%, 33%, 0.5);
+
+  --lin-gradient-orange: linear-gradient(144deg, #ffc340, #f78122 50%, #eb5600);
 }
 
 /*Estilos base*/
@@ -24,7 +26,6 @@
   font-family: "Playfair Display", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-  background-color: var(--soft-blush);
   color: var(--smoky-rose);
   height: 100%;
 }
@@ -75,7 +76,7 @@ p {
 }
 
 .mauve-shadow-background {
-  background-color: var(--mauve-shadow-tr);
+  background-color: var(--mauve-shadow);
   color: var(--soft-blush);
   filter: drop-shadow(0 5px 5px var(--blaze-orange-tr));
   transition: all 0.3s ease;
@@ -89,14 +90,14 @@ p {
 }
 
 .soft-blush-background {
-  background-color: var(--soft-blush-tr);
+  background-color: var(--soft-blush);
   color: var(--mauve-shadow-2);
   filter: drop-shadow(0 5px 5px var(--mauve-shadow-2));
   transition: all 0.3s ease;
 }
 
 .smokey-rose-background {
-  background-color: var(--smoky-rose-tr);
+  background-color: var(--smoky-rose);
   color: var(--soft-blush);
   filter: drop-shadow(0 5px 5px var(--mauve-shadow-2));
   transition: all 0.3s ease;
@@ -136,7 +137,7 @@ p {
 
 /*Estilos del contenedor principal*/
 .main-content {
-  display: flex;
+  display: grid;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -145,15 +146,39 @@ p {
 }
 
 /*Estilos de la sección de inicio*/
+#home-section{
+  height: 100vh;
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
+}
+
+#home-section h1{
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  align-self: center;
+;
+}
+
+
 .img-logo-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 10vh;
   user-select: none;
   /*Aquí se debe de poner la imagen principal de los apartamentos para colocarla destrás del logo*/
   background-image: "../assets/img_vista_general.webp";
+}
+
+.inicio-background-img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .img-logo {
@@ -170,29 +195,29 @@ p {
   margin: auto;
 }
 
-.icon-sz-1{
+.icon-sz-1 {
   width: 30px;
-  height: 30px
+  height: 30px;
 }
 
-.icon-sz-2{
+.icon-sz-2 {
   width: 35px;
-  height: 35px
+  height: 35px;
 }
 
-.icon-sz-3{
+.icon-sz-3 {
   width: 40px;
-  height: 40px
+  height: 40px;
 }
 
-.icon-sz-4{
+.icon-sz-4 {
   width: 45px;
-  height: 45px
+  height: 45px;
 }
 
-.icon-sz-5{
+.icon-sz-5 {
   width: 50px;
-  height: 50px
+  height: 50px;
 }
 
 @media screen and (470px <= width <= 768px) {
@@ -207,12 +232,7 @@ p {
   }
 
   .title-left,
-  .title-right{
+  .title-right {
     width: 70%;
   }
-
-  #gallery-section, #apartment-section{
-    margin-bottom: 0;
-  }
-
 }

@@ -1,7 +1,8 @@
-export function Faq(){
-    return(
-        <section id="faq-section">
-            <h2>Preguntas Frecuentes</h2>
-        </section>
-    );
+export function Faq() {
+  return (
+    <>
+      <h2 id="faq-section-title">Preguntas Frecuentes</h2>
+      <section id="faq-section"></section>
+    </>
+  );
 }

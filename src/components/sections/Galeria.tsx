@@ -1,17 +1,25 @@
-import { GalleryCarousel } from "./galleryCarousel";
+import { GalleryCarousel } from "../galleryCarousel.tsx";
 import { mainCarouselItems } from "../../constants/carouselItems.ts";
-
 
 export function Galeria() {
   return (
-    <section id="gallery-section">
-      <h2 className="title title-left spanFull mauve-shadow-background">Un recorrido por nuestras instalaciones</h2>
-      <p>
-        Explore la galería de imágenes de nuestra áreas comunes y amenidades.
-      </p>
+    <>
+      <h2 className="title title-left spanFull mauve-shadow-background" id="gallery-section-title">
+        Un recorrido por nuestras instalaciones
+      </h2>
+      <section id="gallery-section">
+        <p>
+          Explore la galería de imágenes de nuestra áreas comunes y amenidades.
+        </p>
 
-      <GalleryCarousel carouselItems={mainCarouselItems} idName="condo-carousel"/>
-    </section>
+        <div className="gallery-carousel-container">
+          <GalleryCarousel
+            carouselItems={mainCarouselItems}
+            idName="condo-carousel"
+          />
+        </div>
+      </section>
+    </>
   );
 }
 

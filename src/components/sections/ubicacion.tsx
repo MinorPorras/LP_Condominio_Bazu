@@ -4,7 +4,7 @@ import { WAZE_LOCATION_URL } from "../../constants/urlConstants";
 export function Ubicacion() {
   return (
     <section id="location-section">
-      <h2 className="title-center spanFull blaze-orange-background">
+      <h2 className="title-center spanFull mauve-shadow-background" id="location-section-title">
         Ubicación estratégica con acceso sencillo a San José y Escazú
       </h2>
       <p>

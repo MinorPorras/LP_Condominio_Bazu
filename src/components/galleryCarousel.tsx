@@ -1,7 +1,7 @@
-import IconLeftArrow from "../icons/general/iconLeftArrow";
-import { IconRightArrow } from "../icons/general/iconRightArrow";
-import type { carouseItem } from "../../constants/generalTypes.ts";
-import { mainCarouselItems } from "../../constants/carouselItems.ts";
+import IconLeftArrow from "./icons/general/iconLeftArrow.tsx";
+import { IconRightArrow } from "./icons/general/iconRightArrow.tsx";
+import type { carouseItem } from "../constants/generalTypes.ts";
+import { mainCarouselItems } from "../constants/carouselItems.ts";
 
 export function GalleryCarousel({
   carouselItems = mainCarouselItems,
@@ -43,9 +43,6 @@ export function GalleryCarousel({
               className="d-block carousel-image"
               alt={image.alt}
             />
-            <div className="carousel-caption d-none d-md-block">
-              <p>{image.description}</p>
-            </div>
           </div>
         ))}
       </div>

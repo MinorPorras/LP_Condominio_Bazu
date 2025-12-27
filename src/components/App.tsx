@@ -1,7 +1,6 @@
 import "../styles/App.css";
 import { Galeria } from "./sections/Galeria";
 import Inicio from "./sections/Inicio";
-import SobreNosotros from "./sections/sobreNosotros";
 import Contacto from "./sections/contacto";
 import Ubicacion from "./sections/ubicacion";
 import Servicios from "./sections/Servicios";
@@ -19,7 +18,6 @@ function App() {
         <Galeria />
         <Servicios />
         <ApartmentGallery />
-        <SobreNosotros />
         <Contacto />
         <Ubicacion />
         <Faq />
