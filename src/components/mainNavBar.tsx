@@ -5,11 +5,21 @@ import { IconMenu } from "./icons/menu/iconMenu.tsx";
 import { IconMenuCollapsed } from "./icons/menu/iconMenuCollapsed.tsx";
 import { IconHome } from "./icons/menu/iconHome.tsx";
 import useMainNavBarItem from "../hooks/useSelectedNavBarItem.tsx";
+import { useLanguage } from "../hooks/useLanguage.tsx";
 
 export function MainNavBar() {
   const { selectedNavBarItem, handleNavbarItemClick } = useMainNavBarItem();
 
   const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const { language, setLanguage } = useLanguage();
+
+  const isSpanish = language === "es";
+
+  const handleToggleLanguage = () => {
+    const newLang = isSpanish ? "en" : "es";
+    setLanguage(newLang);
+  };
 
   return (
     <header className={`main-navbar-header ${isCollapsed ? "collapsed" : ""}`}>
@@ -23,6 +33,31 @@ export function MainNavBar() {
           <IconMenuCollapsed className="Icon-Menu-Collapsed" />
         )}
       </button>
+      <div className={`language-selector ${isCollapsed ? "collapsed" : ""}`}>
+        <label className="" htmlFor="languageSwitch">
+          {isSpanish ? (
+            <span className="fi fi-es custom-flag-size"></span>
+          ) : (
+            <span className="fi fi-us custom-flag-size"></span>
+          )}
+          <span className="lang-name-text">
+            {isSpanish ? "Español" : "English"}
+          </span>
+        </label>
+        <div
+          className="form-check form-switch language-switch-container"
+          hidden={isCollapsed}
+        >
+          <input
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="languageSwitch"
+            checked={isSpanish} // Vincula el estado al switch
+            onChange={handleToggleLanguage} // Dispara el cambio
+          />
+        </div>
+      </div>
       <nav className="main-navbar">
         <div className="main-navbar-list">
           {TABS.map((tab) => {
@@ -43,9 +78,6 @@ export function MainNavBar() {
               />
             );
           })}
-          <div className="language-selector">
-            <p>Español</p>
-          </div>
         </div>
       </nav>
     </header>

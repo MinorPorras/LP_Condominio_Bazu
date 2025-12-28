@@ -1,7 +1,6 @@
 #gallery-section {
   width: 100%;
-  height: 100vh;
-  margin-bottom: 10vh;
+  height: 70vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto auto;
@@ -14,8 +13,7 @@
 
 #apartment-section {
   width: 100%;
-  height: 100vh;
-  margin-bottom: 10vh;
+  height: 70vh;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 2.5fr;
@@ -63,6 +61,7 @@
   width: 90%;
   user-select: none;
   margin: 0 10px;
+  z-index: 1;
 }
 
 .gallery-carousel-container.apartment-carousel {
@@ -182,12 +181,12 @@
 @media screen and (max-width: 799px) {
   #gallery-section {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 6fr;
+    grid-template-rows: 0.5fr min-content;
   }
 
   #apartment-section {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 4fr;
+    grid-template-rows: 0.4fr min-content;
   }
 
   #apartment-carousel {

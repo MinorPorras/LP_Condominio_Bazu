@@ -65,5 +65,11 @@ export const SUPPORTED_LANGS: Record<SUPPORTED_LANGS_ABR, SUPPORTED_LANGS_CPL> =
   en: "English"
 }
 
+export interface LanguageContextType{
+  language: SUPPORTED_LANGS_ABR;
+  setLanguage: (lang: SUPPORTED_LANGS_ABR) => void;
+  getLanguageCPL: () => SUPPORTED_LANGS_CPL;
+}
+
 
 

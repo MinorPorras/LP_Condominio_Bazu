@@ -105,26 +105,22 @@ p {
 
 .title {
   text-align: center;
-  margin-bottom: 20px;
   width: 100%;
   align-self: center;
 }
 
 .title-left {
   text-align: left;
-  margin-bottom: 20px;
   justify-self: start;
 }
 
 .title-right {
   text-align: right;
-  margin-bottom: 20px;
   justify-self: end;
 }
 
 .title-center {
   text-align: center;
-  margin-bottom: 20px;
   justify-self: center;
 }
 
@@ -146,31 +142,29 @@ p {
 }
 
 /*Estilos de la sección de inicio*/
-#home-section{
-  height: 100vh;
+#home-section {
+  height: fit-content;
   display: grid;
   grid-auto-rows: 1fr 1fr;
+  gap: 20px;
 }
 
-#home-section h1{
+#home-section h1 {
   text-align: center;
   margin-bottom: 20px;
   width: 100%;
   align-self: center;
-;
 }
-
 
 .img-logo-container {
   width: 100%;
   margin-bottom: 10vh;
   user-select: none;
-  /*Aquí se debe de poner la imagen principal de los apartamentos para colocarla destrás del logo*/
-  background-image: "../assets/img_vista_general.webp";
 }
 
 .inicio-background-img {
   width: 100%;
+  height: 93.6vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -179,6 +173,9 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 0;
+  overflow: hidden;
+  display: block;
 }
 
 .img-logo {
@@ -220,9 +217,19 @@ p {
   height: 50px;
 }
 
+@media screen and (max-width: 470px) {
+  .inicio-background-img {
+    height: 35vh;
+  }
+}
+
 @media screen and (470px <= width <= 768px) {
   .img-logo {
     width: 50%;
+  }
+
+  .inicio-background-img {
+    height: 80vh;
   }
 }
 
