@@ -15,7 +15,16 @@ export type TABS_TYPE =
   | "Servicios"
   | "Contacto"
   | "¿Donde encontrarnos?"
-  | "Preguntas frecuentes";
+  | "Preguntas frecuentes"
+
+  | "Home"
+  | "Gallery"
+  | "Apartments"
+  | "Services"
+  | "Contact"
+  | "Where to find us?"
+  | "FAQ";
+
 
 export type ANCHOR_IDS =
   | "home-section"
@@ -41,9 +50,12 @@ export interface mainNavbarItem {
   IconComponent: React.ElementType;
 }
 
+export type TABS_KEY_TYPE = Record<SUPPORTED_LANGS_ABR, TABS_TYPE>;
+
+
 export interface TABS_ICONS_TYPE {
-  key: TABS_TYPE;
-  value: React.ElementType;
+  key: TABS_KEY_TYPE;
+  iconComponent: React.ElementType;
   anchor: ANCHOR_IDS;
 }
 

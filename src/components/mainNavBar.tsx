@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { MainNavBarItem } from "./mainNabVarItem.tsx";
-import { TAB_ICONS, TABS } from "../constants/tabs.ts";
+import { TAB_INFO } from "../constants/tabs.ts";
 import { IconMenu } from "./icons/menu/iconMenu.tsx";
 import { IconMenuCollapsed } from "./icons/menu/iconMenuCollapsed.tsx";
-import { IconHome } from "./icons/menu/iconHome.tsx";
 import useMainNavBarItem from "../hooks/useSelectedNavBarItem.tsx";
 import { useLanguage } from "../hooks/useLanguage.tsx";
 
@@ -60,24 +59,26 @@ export function MainNavBar() {
       </div>
       <nav className="main-navbar">
         <div className="main-navbar-list">
-          {TABS.map((tab) => {
-            const IconComponent =
-              TAB_ICONS.find((icon) => icon.key === tab)?.value || IconHome;
-            const anchor =
-              TAB_ICONS.find((icon) => icon.key === tab)?.anchor ||
-              "home-section";
-            return (
-              <MainNavBarItem
-                key={tab}
-                text={tab}
-                anchor={anchor}
-                selectedItem={selectedNavBarItem}
-                handleItemClick={handleNavbarItemClick}
-                isCollapsed={isCollapsed}
-                IconComponent={IconComponent}
-              />
-            );
-          })}
+          {TAB_INFO.map(({ key, anchor, iconComponent }) => (
+            <MainNavBarItem
+              key={isSpanish ? key.es : key.en}
+              text={isSpanish ? key.es : key.en}
+              anchor={anchor}
+              selectedItem={selectedNavBarItem}
+              handleItemClick={handleNavbarItemClick}
+              isCollapsed={isCollapsed}
+              IconComponent={iconComponent}
+            />
+          ))}
+          {/* <MainNavBarItem
+            key={tab}
+            text={tab}
+            anchor={anchor}
+            selectedItem={selectedNavBarItem}
+            handleItemClick={handleNavbarItemClick}
+            isCollapsed={isCollapsed}
+            IconComponent={IconComponent}
+          /> */}
         </div>
       </nav>
     </header>

@@ -1,5 +1,5 @@
 //Types
-import type { TABS_ICONS_TYPE, TABS_TYPE } from "./generalTypes";
+import type {TABS_ICONS_TYPE, TABS_KEY_TYPE } from "./generalTypes";
 
 //Icons
 import { IconCamera } from "../components/icons/menu/iconCamera";
@@ -10,55 +10,76 @@ import { IconPhone } from "../components/icons/general/iconPhone";
 import { IconFaq } from "../components/icons/menu/iconFaq";
 import { IconApartment } from "../components/icons/menu/iconApartment";
 
-export const TABS: TABS_TYPE[] = [
-  "Inicio",
-  "Galería",
-  "Servicios",
-  "Apartamentos",
-  "Contacto",
-  "¿Donde encontrarnos?",
-  "Preguntas frecuentes",
-];
-
-export const TAB_ICONS: TABS_ICONS_TYPE[] = [
+export const TABS: TABS_KEY_TYPE[]= [
   {
-    key: "Inicio",
-    value: IconHome,
+    es: "Inicio",
+    en: "Home",
+  },
+  {
+    es: "Galería",
+    en: "Gallery",
+  },
+  {
+    es: "Servicios",
+    en: "Services",
+  },
+  {
+    es: "Apartamentos",
+    en: "Apartments",
+  },
+  {
+    es: "Contacto",
+    en: "Contact",
+  },
+  {
+    es: "¿Donde encontrarnos?",
+    en: "Where to find us?",
+  },
+  {
+    es: "Preguntas frecuentes",
+    en: "FAQ",
+  },
+]
+
+export const TAB_INFO: TABS_ICONS_TYPE[] = [
+  {
+    key: TABS[0],
+    iconComponent: IconHome,
     anchor: "home-section",
   },
   {
-    key: "Galería",
-    value: IconCamera,
+    key: TABS[1],
+    iconComponent: IconCamera,
     anchor: "gallery-section-title",
   },
   {
-    key: "Servicios",
-    value: IconMedalStar,
+    key:TABS[2],
+    iconComponent: IconMedalStar,
     anchor: "services-section-title",
   },
   {
-    key: "Apartamentos",
-    value: IconApartment,
+    key: TABS[3],
+    iconComponent: IconApartment,
     anchor: "apartment-section-title",
   },
   {
-    key: "Contacto",
-    value: IconPhone,
+    key: TABS[4],
+    iconComponent: IconPhone,
     anchor: "contact-section-title",
   },
   {
-    key: "¿Donde encontrarnos?",
-    value: IconLocation,
+    key: TABS[5],
+    iconComponent: IconLocation,
     anchor: "location-section-title",
   },
   {
-    key: "Preguntas frecuentes",
-    value: IconFaq,
+    key: TABS[6],
+    iconComponent: IconFaq,
     anchor: "faq-section-title",
   },
 ];
 
 export default {
   TABS,
-  TAB_ICONS
+  TAB_INFO,
 };
