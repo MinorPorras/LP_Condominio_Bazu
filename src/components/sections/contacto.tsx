@@ -2,7 +2,7 @@ import type {
   CR_PHONE_NUMBER,
   NUMBER_COUNTRY_CODE,
 } from "../../constants/generalTypes";
-import { WhatsappContactSection } from "./WhatsappContactSection";
+import { WhatsappContactSection } from "../WhatsappContactSection";
 
 export function Contacto() {
   const countryCode: NUMBER_COUNTRY_CODE = "+506";

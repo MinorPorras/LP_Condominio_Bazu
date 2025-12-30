@@ -5,6 +5,7 @@ import "./styles/mainNavbar.css";
 import "./styles/gallerySection.css";
 import "./styles/locationSection.css";
 import "./styles/contactSection.css";
+import "./styles/servicesSection.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "flag-icons/css/flag-icons.min.css";

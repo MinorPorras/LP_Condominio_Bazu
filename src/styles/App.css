@@ -6,14 +6,14 @@
   --blaze-orange: hsla(19, 100%, 52%, 1);
   --blaze-orange-tr: hsla(19, 100%, 52%, 0.5);
 
-  --smoky-rose: hsla(347, 13%, 44%, 1);
+  --smoky-rose: hsla(348, 13%, 44%, 1);
   --smoky-rose-tr: hsla(347, 13%, 44%, 0.5);
   --smoky-rose-tr8: hsla(347, 13%, 44%, 0.8);
 
   --mauve-shadow: hsla(341, 19%, 38%, 1);
   --mauve-shadow-tr: hsla(341, 19%, 38%, 0.5);
 
-  --mauve-shadow-2: hsla(327, 12%, 33%, 1);
+  --mauve-shadow-2: hsl(327, 12%, 33%);
   --mauve-shadow-2-tr: hsla(327, 12%, 33%, 0.5);
 
   --lin-gradient-orange: linear-gradient(144deg, #ffc340, #f78122 50%, #eb5600);
@@ -215,6 +215,15 @@ p {
 .icon-sz-5 {
   width: 50px;
   height: 50px;
+}
+
+.icon-sz-cover-100 {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-sz-cover-50 {
+  width: 50%;
 }
 
 @media screen and (max-width: 470px) {

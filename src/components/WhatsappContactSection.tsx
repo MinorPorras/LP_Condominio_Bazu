@@ -1,5 +1,5 @@
-import { IconWhatsApp } from "../icons/general/whatsappIcon";
-import type {CR_PHONE_NUMBER, NUMBER_COUNTRY_CODE} from '../../constants/generalTypes'
+import { IconWhatsApp } from "./icons/general/whatsappIcon";
+import type {CR_PHONE_NUMBER, NUMBER_COUNTRY_CODE} from './../constants/generalTypes'
 
 export function WhatsappContactSection({ countryCode, phoneNumber }: { countryCode: NUMBER_COUNTRY_CODE; phoneNumber: CR_PHONE_NUMBER }) {
   return (

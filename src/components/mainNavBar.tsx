@@ -5,6 +5,7 @@ import { IconMenu } from "./icons/menu/iconMenu.tsx";
 import { IconMenuCollapsed } from "./icons/menu/iconMenuCollapsed.tsx";
 import useMainNavBarItem from "../hooks/useSelectedNavBarItem.tsx";
 import { useLanguage } from "../hooks/useLanguage.tsx";
+import { LanguageSelector } from "./LanguageSelector.tsx";
 
 export function MainNavBar() {
   const { selectedNavBarItem, handleNavbarItemClick } = useMainNavBarItem();
@@ -32,31 +33,11 @@ export function MainNavBar() {
           <IconMenuCollapsed className="Icon-Menu-Collapsed" />
         )}
       </button>
-      <div className={`language-selector ${isCollapsed ? "collapsed" : ""}`}>
-        <label className="" htmlFor="languageSwitch">
-          {isSpanish ? (
-            <span className="fi fi-es custom-flag-size"></span>
-          ) : (
-            <span className="fi fi-us custom-flag-size"></span>
-          )}
-          <span className="lang-name-text">
-            {isSpanish ? "Español" : "English"}
-          </span>
-        </label>
-        <div
-          className="form-check form-switch language-switch-container"
-          hidden={isCollapsed}
-        >
-          <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="languageSwitch"
-            checked={isSpanish} // Vincula el estado al switch
-            onChange={handleToggleLanguage} // Dispara el cambio
-          />
-        </div>
-      </div>
+      <LanguageSelector
+        isCollapsed={isCollapsed}
+        isSpanish={isSpanish}
+        handleToggleLanguage={handleToggleLanguage}
+      />
       <nav className="main-navbar">
         <div className="main-navbar-list">
           {TAB_INFO.map(({ key, anchor, iconComponent }) => (
@@ -70,15 +51,6 @@ export function MainNavBar() {
               IconComponent={iconComponent}
             />
           ))}
-          {/* <MainNavBarItem
-            key={tab}
-            text={tab}
-            anchor={anchor}
-            selectedItem={selectedNavBarItem}
-            handleItemClick={handleNavbarItemClick}
-            isCollapsed={isCollapsed}
-            IconComponent={IconComponent}
-          /> */}
         </div>
       </nav>
     </header>
