@@ -100,5 +100,5 @@ export interface ServiceItemProps {
 export interface AccordionFAQItemProps {
   question: string;
   answer: string;
-  isOpen: string;
+  eventKey: string;
 }

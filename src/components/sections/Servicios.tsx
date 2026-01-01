@@ -11,6 +11,7 @@ export function Servicios() {
         {servicesItems.map((service) => {
           return (
             <div
+              key={`services-section-${service.name}`}
               className={`services-section-card-container ${
                 service.isLeftAligned ? "left-aligned" : ""
               }`}
