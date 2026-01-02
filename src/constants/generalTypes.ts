@@ -87,6 +87,7 @@ export interface LANGUAGE_SELECTOR_PROPS{
   isCollapsed: boolean,
   isSpanish: boolean
   handleToggleLanguage: () => void
+  className: string
 }
 
 export interface ServiceItemProps {

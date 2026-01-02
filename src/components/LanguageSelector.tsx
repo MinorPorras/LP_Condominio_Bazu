@@ -1,9 +1,9 @@
 import type { LANGUAGE_SELECTOR_PROPS } from "../constants/generalTypes";
 
-export function LanguageSelector({isCollapsed, isSpanish, handleToggleLanguage}: LANGUAGE_SELECTOR_PROPS){
+export function LanguageSelector({isCollapsed, isSpanish, handleToggleLanguage, className}: LANGUAGE_SELECTOR_PROPS){
     return(
-              <div className={`language-selector ${isCollapsed ? "collapsed" : ""}`}>
-        <label className="" htmlFor="languageSwitch">
+              <div className={`${className} ${isCollapsed ? "collapsed" : ""}`}>
+        <label className={`${className}-language-switch-label`} htmlFor="languageSwitch">
           {isSpanish ? (
             <span className="fi fi-es custom-flag-size"></span>
           ) : (

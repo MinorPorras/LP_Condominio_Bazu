@@ -37,6 +37,7 @@ export function MainNavBar() {
         isCollapsed={isCollapsed}
         isSpanish={isSpanish}
         handleToggleLanguage={handleToggleLanguage}
+        className="language-selector"
       />
       <nav className="main-navbar">
         <div className="main-navbar-list">

@@ -7,6 +7,7 @@ import Servicios from "./sections/Servicios";
 import { Faq } from "./sections/faq";
 import MainNavBar from "./mainNavBar";
 import { ApartmentGallery } from "./sections/apartment";
+import { Footer } from "./sections/footer";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Ubicacion />
         <Faq />
       </main>
+
+      <Footer/>
     </>
   );
 }

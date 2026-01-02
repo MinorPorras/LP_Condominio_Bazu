@@ -1,0 +1,45 @@
+#faq-section{
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+}
+
+/* Cambia el color del encabezado (botón) cuando está abierto */
+.faq-item .accordion-button:not(.collapsed) {
+  background-image: var(
+    --lin-gradient-orange
+  ) !important; 
+  color: white;
+  box-shadow: none;
+}
+
+.AccordionFAQ-content-summary {
+  padding: 0;
+}
+
+.faq-item{
+  border: 1px solid var(--blaze-orange);
+  border-radius: 7px;
+}
+
+/* Cambia el color de fondo de TODO el ítem cuando está abierto */
+.faq-item .accordion-item {
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+/* Fondo del cuerpo (la respuesta)*/
+.faq-item .accordion-item:has(> .accordion-collapse.show) {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.05
+  ); 
+}
+
+/* 4. Cambiar el color del ícono de la flecha cuando está abierto */
+.faq-item .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
