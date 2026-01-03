@@ -4,6 +4,8 @@ import { IconPhone } from "../icons/general/iconPhone";
 import { IconLocation } from "../icons/general/iconLocation";
 import { IconWhatsApp } from "../icons/general/whatsappIcon";
 import logoNegro from "../../assets/img_logo_condo_bazu_negro.webp";
+import { countryCode, phoneNumber } from "../../constants/generalConst";
+import { whastappUrl } from "../../constants/urlConstants";
 
 export function Footer() {
   const { language, setLanguage } = useLanguage();
@@ -13,18 +15,16 @@ export function Footer() {
     es: {
       logoAlt: "Logo de Condominio Bazú en color negro",
       rights: "Todos los derechos reservados.",
-      location: "Alajuelita, San José, Costa Rica.",
+      location: "San José, Escazú, Urbanización Nuevo Horizonte, avenida Bazú",
       contact: "Contáctenos",
-      links: "Enlaces rápidos",
-      services: "Servicios",
+      whatsappLinkText: "Iniciar chat",
     },
     en: {
       logoAlt: "Logo of Condominio Bazú in black color",
       rights: "All rights reserved.",
-      location: "Alajuelita, San Jose, Costa Rica.",
+      location: "San José, Escazú, Nuevo Horizonte Urbanization, Bazú Avenue",
       contact: "Contact Us",
-      links: "Quick Links",
-      services: "Services",
+      whatsappLinkText: "Start chat",
     },
   }[language];
 
@@ -38,7 +38,6 @@ export function Footer() {
   return (
     <footer className="footer-container">
       <div className="footer-content">
-        {/* Sección 1: Logo y Eslogan */}
         <div className="footer-brand">
           <img src={logoNegro} alt={t.logoAlt} className="img-logo" />
         </div>
@@ -52,27 +51,26 @@ export function Footer() {
           />
         </div>
 
-        {/* Sección 2: Contacto Directo */}
         <div className="footer-contact">
           <h3>{t.contact}</h3>
           <ul>
             <li>
               <IconLocation className="footer-logo" />
-              <span>Cerca de La Aurora y Bello Horizonte</span>
+              <span>{t.location}</span>
             </li>
             <li>
               <IconPhone className="footer-logo" />
-              <span>+506 8388-3316</span>
+              <span>{`${countryCode} ${phoneNumber}`}</span>
             </li>
             <li>
               <a
-                href="https://api.whatsapp.com/send?phone=50683883316&text=Hola!%20Me%20interesa%20conocer%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Condominio%20Baz%C3%BA"
+                href={whastappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-link"
               >
-                <IconWhatsApp className="footer-logo icon-sz-3" /> WhatsApp
-                Directo
+                <IconWhatsApp className="footer-logo icon-sz-3" />
+                <span>{t.whatsappLinkText}</span>
               </a>
             </li>
           </ul>

@@ -226,11 +226,6 @@ p {
   width: 50%;
 }
 
-.footer-container{
-  background-color: var(--mauve-shadow);
-  
-}
-
 @media screen and (max-width: 470px) {
   .inicio-background-img {
     height: 35vh;

@@ -37,8 +37,7 @@ export type ANCHOR_IDS =
 
 export interface carouseItem {
   src: string;
-  alt: string;
-  description: string;
+  alt: Record<SUPPORTED_LANGS_ABR, string>;
 }
 
 export interface mainNavbarItem {
@@ -70,24 +69,17 @@ export type CR_PHONE_NUMBER = `${string}-${string}`;
 export type SUPPORTED_LANGS_ABR = "es" | "en";
 
 export type SUPPORTED_LANGS_CPL = "Español" | "English";
-
-export const SUPPORTED_LANGS: Record<SUPPORTED_LANGS_ABR, SUPPORTED_LANGS_CPL> =
-  {
-    es: "Español",
-    en: "English",
-  };
-
 export interface LanguageContextType {
   language: SUPPORTED_LANGS_ABR;
   setLanguage: (lang: SUPPORTED_LANGS_ABR) => void;
   getLanguageCPL: () => SUPPORTED_LANGS_CPL;
 }
 
-export interface LANGUAGE_SELECTOR_PROPS{
-  isCollapsed: boolean,
-  isSpanish: boolean
-  handleToggleLanguage: () => void
-  className: string
+export interface LANGUAGE_SELECTOR_PROPS {
+  isCollapsed: boolean;
+  isSpanish: boolean;
+  handleToggleLanguage: () => void;
+  className: string;
 }
 
 export interface ServiceItemProps {

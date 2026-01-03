@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
+import { SUPPORTED_LANGS } from "../constants/generalConst";
 import {
-  SUPPORTED_LANGS,
   type SUPPORTED_LANGS_ABR,
   type LanguageContextType,
 } from "../constants/generalTypes";

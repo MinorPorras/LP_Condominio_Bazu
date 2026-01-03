@@ -1,20 +1,29 @@
-import type {
-  CR_PHONE_NUMBER,
-  NUMBER_COUNTRY_CODE,
-} from "../../constants/generalTypes";
+import { countryCode, phoneNumber } from "../../constants/generalConst";
+import { whastappUrl } from "../../constants/urlConstants";
 import { WhatsappContactSection } from "../WhatsappContactSection";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export function Contacto() {
-  const countryCode: NUMBER_COUNTRY_CODE = "+506";
-  const urlPhoneNumber = "83883316";
-  const phoneNumber: CR_PHONE_NUMBER = "8388-3316";
-  const message =
-    "Hola! Me interesa conocer más información sobre Condominio Bazú";
-  const whastappUrl = `https://api.whatsapp.com/send?phone=${countryCode}${urlPhoneNumber}&text=${message}`;
+  const { language } = useLanguage();
+
+  const text = {
+    es: {
+      title: "¡Consulte la disponibilidad y agende su visita!",
+      description:
+        "Llamanos o envíanos un mensaje por medio de whastapp en el siguiente número:",
+      buttonText: "Iniciar chat",
+    },
+    en: {
+      title: "¡Check availability and schedule your visit!",
+      description: "Call us or send us a message throught whatsapp with the following number",
+      buttonText: "Start chat",
+    },
+  }[language];
 
   const clickhandler = () => {
     window.open(whastappUrl, "_blank");
   };
+
   return (
     <>
       <header>
@@ -22,15 +31,12 @@ export function Contacto() {
           className="title blaze-orange-background"
           id="contact-section-title"
         >
-          ¡Consulte la disponibilidad y agende su visita!
+          {text.title}
         </h2>
       </header>
       <section id="contact-section">
         <div className="contact-section-content">
-          <p>
-            Llamanos o envíanos un mensaje por medio de whastapp en el siguiente
-            número:
-          </p>
+          <p>{text.description}</p>
 
           <WhatsappContactSection
             countryCode={countryCode}
@@ -40,7 +46,7 @@ export function Contacto() {
 
         <footer>
           <button className="button-64" role="button" onClick={clickhandler}>
-            <span className="text">Iniciar chat</span>
+            <span className="text">{text.buttonText}</span>
           </button>
         </footer>
       </section>
