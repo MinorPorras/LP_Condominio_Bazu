@@ -14,9 +14,10 @@ export default defineConfig({
         quality: 80,
       },
       svg: {
-        quality: 80,
+        multipass: true,
       },
       webp: {
+        lossless: false,
         quality: 80,
       },
     }),
