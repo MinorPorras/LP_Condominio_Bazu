@@ -1,27 +1,28 @@
 import Accordion from "react-bootstrap/esm/Accordion";
-import { FAQ_ITEMS_ES, FAQ_ITEMS_EN } from "../../constants/faqItems";
+import { FAQ_ITEMS } from "../../constants/faqItems";
 import { AccordionFAQItem } from "../AccordionFAQItem";
 import { useLanguage } from "../../hooks/useLanguage";
 
 export function Faq() {
   const { language } = useLanguage();
 
-  const faqItems = {
-    es: FAQ_ITEMS_ES,
-    en: FAQ_ITEMS_EN,
-  }[language];
+  const sectionTitle =
+    language === "es" ? "Preguntas Frecuentes" : "Frequently Asked Questions";
 
   return (
     <>
-      <h2 id="faq-section-title">Preguntas Frecuentes</h2>
+      <h2 id="faq">{sectionTitle}</h2>
       <section id="faq-section">
         <Accordion defaultActiveKey="0" className="faq-item">
-          {faqItems.map((item) => {
+          {FAQ_ITEMS.map((item) => {
+            const questionText = item.question[language];
+            const answerText = item.answer[language];
+
             return (
               <AccordionFAQItem
-                key={item.question}
-                question={item.question}
-                answer={item.answer}
+                key={`faq-item-${item.eventKey}`}
+                question={questionText || item.question['es']}
+                answer={answerText || item.answer['es']}
                 eventKey={item.eventKey}
               />
             );

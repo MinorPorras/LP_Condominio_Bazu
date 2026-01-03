@@ -2,6 +2,7 @@ import IconLeftArrow from "./icons/general/iconLeftArrow.tsx";
 import { IconRightArrow } from "./icons/general/iconRightArrow.tsx";
 import type { carouseItem } from "../constants/generalTypes.ts";
 import { mainCarouselItems } from "../constants/carouselItems.ts";
+import { useLanguage } from "../hooks/useLanguage.tsx";
 
 export function GalleryCarousel({
   carouselItems = mainCarouselItems,
@@ -10,18 +11,20 @@ export function GalleryCarousel({
   carouselItems?: carouseItem[];
   idName: string;
 }) {
+  const { language } = useLanguage();
+
   return (
     <div
       id={idName}
       data-bs-ride="carousel"
       data-bs-interval="5000"
-      className="carousel carousel-dark slide"
+      className="carousel carousel-dark slide gallery-carousel-base"
     >
       {carouselItems.length > 2 && (
         <div className="carousel-indicators">
           {carouselItems.map((_, index) => (
             <button
-              key={index}
+              key={`${idName}-item-${index}`}
               type="button"
               data-bs-target={`#${idName}`}
               data-bs-slide-to={index}
@@ -33,18 +36,23 @@ export function GalleryCarousel({
         </div>
       )}
       <div className="carousel-inner">
-        {carouselItems.map((image, index) => (
-          <div
-            key={index}
-            className={`carousel-item ${index === 0 ? "active" : ""}`}
-          >
-            <img
-              src={image.src}
-              className="d-block carousel-image"
-              alt={image.alt}
-            />
-          </div>
-        ))}
+        {carouselItems.map((image, index) => {
+          const imageAlt = image.alt[language];
+          return (
+            <div
+              key={`${idName}-image-${index}`}
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+            >
+              <img
+                src={image.src}
+                className="d-block carousel-image"
+                alt={imageAlt}
+                loading="lazy"
+              />
+            </div>
+          );
+        })}
+        ;
       </div>
       <button
         className="carousel-control-prev carousel-control-custom"

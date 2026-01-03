@@ -1,14 +1,23 @@
 import { ServicesCard } from "../ServicesCard";
-import { servicesItems } from "../../constants/servicesItems";
+import { SERVICE_ITEMS } from "../../constants/servicesItems";
+import { useLanguage } from "../../hooks/useLanguage";
+import type { SUPPORTED_LANGS_ABR } from "../../constants/generalTypes";
 
 export function Servicios() {
+  const { language }: { language: SUPPORTED_LANGS_ABR } = useLanguage();
+
+  const title =
+    language === "es"
+      ? "Descubre los servicios y comodidades que ofrecemos:"
+      : "Discover the services and amenities we offer:";
+
   return (
     <>
-      <h2 className="title blaze-orange-background" id="services-section-title">
-        Descubra los servicios y comodidades que ofrecemos:
+      <h2 className="title blaze-orange-background" id="servicios">
+        {title}
       </h2>
       <section id="services-section">
-        {servicesItems.map((service) => {
+        {SERVICE_ITEMS.map((service, index) => {
           return (
             <div
               key={`services-section-${service.name}`}
@@ -17,11 +26,11 @@ export function Servicios() {
               }`}
             >
               <ServicesCard
-                key={service.name}
-                name={service.name}
+                key={`services-card-${service.name[language]}-${index}`}
+                name={service.name[language]}
                 IconComponent={service.IconComponent}
                 isLeftAligned={service.isLeftAligned}
-                imgAlt={service.imgAlt}
+                imgAlt={service.imgAlt && service.imgAlt[language]}
                 imgSrc={service.imgSrc}
               />
             </div>

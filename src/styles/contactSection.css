@@ -21,7 +21,7 @@
   z-index: 1;
 }
 
-.contact-section-content::before{
+.contact-section-content::before {
   content: "";
   position: absolute;
   width: 95%;
@@ -29,12 +29,10 @@
   background-color: var(--mauve-shadow);
   border-radius: 10px;
   filter: drop-shadow(0 5px 5px var(--mauve-shadow-tr));
-  z-index: -1;;
+  z-index: -1;
 }
 
-
-
-.contact-section-content p{
+.contact-section-content p {
   color: var(--soft-blush);
 }
 
@@ -51,56 +49,6 @@
   grid-column: 1;
 }
 
-.numberText{
+.numberText {
   color: var(--soft-blush);
-}
-
-
-.button-64 {
-  align-items: center;
-  background-image: linear-gradient(144deg, #ffc340, #f78122 50%, #eb5600);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: var(--mauve-shadow) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: var(--soft-blush);
-  display: flex;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1em;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
-
-  grid-column: 2;
-  grid-row: 1/-1;
-}
-
-.button-64:active,
-.button-64:hover {
-  outline: 0;
-}
-
-.button-64.active:hover {
-  background-image: linear-gradient(144deg, #7a7260, #614f40 50%, #4e372a);
-}
-
-.button-64 span {
-  background-color: var(--mauve-shadow-2);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
-}
-
-.button-64:hover span {
-  background: none;
 }

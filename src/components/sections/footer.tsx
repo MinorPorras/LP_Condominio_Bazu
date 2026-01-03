@@ -39,7 +39,7 @@ export function Footer() {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-brand">
-          <img src={logoNegro} alt={t.logoAlt} className="img-logo" />
+          <img src={logoNegro} alt={t.logoAlt} className="img-logo" loading="lazy"/>
         </div>
 
         <div className="footer-language-selector-container">

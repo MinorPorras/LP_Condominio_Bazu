@@ -18,14 +18,15 @@ export function Inicio() {
     }
   }[language]
   return (
-    <section id="home-section">
+    <section id="inicio">
       <header className="img-logo-container">
         <img
           src={fondoInicio}
           alt={text.backgroundImageAlt}
           className="inicio-background-img"
+          fetchPriority="high"
         />
-        <img src={logoNegro} alt={text.logoAlt} className="img-logo" />
+        <img src={logoNegro} alt={text.logoAlt} className="img-logo" fetchPriority="high"/>
       </header>
 
       <h1>{text.titleText}</h1>

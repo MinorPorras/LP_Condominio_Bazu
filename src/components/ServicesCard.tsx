@@ -1,4 +1,4 @@
-import type { ServiceItemProps } from "../constants/generalTypes";
+import type { ServiceCardItemProps } from "../constants/generalTypes";
 
 export function ServicesCard({
   name,
@@ -6,16 +6,13 @@ export function ServicesCard({
   isLeftAligned,
   imgSrc,
   imgAlt,
-}: ServiceItemProps) {
+}: ServiceCardItemProps) {
   return (
     <>
       {imgSrc ? (
-        <img src={imgSrc} className="services-card-img" alt={imgAlt} />
+        <img src={imgSrc} className="services-card-img" alt={imgAlt} loading="lazy"/>
       ) : (
-        <IconComponent
-          className="services-card-icon"
-          color="#5e4a55"
-        />
+        <IconComponent className="services-card-icon" color="#5e4a55" />
       )}
       <article
         className={`services-card ${isLeftAligned ? "left-aligned" : ""}`}

@@ -1,5 +1,5 @@
 //Types
-import type {TABS_ICONS_TYPE, TABS_KEY_TYPE } from "./generalTypes";
+import type { TABS_ICONS_TYPE, TABS_KEY_TYPE } from "./generalTypes";
 
 //Icons
 import { IconCamera } from "../components/icons/menu/iconCamera";
@@ -10,7 +10,7 @@ import { IconPhone } from "../components/icons/general/iconPhone";
 import { IconFaq } from "../components/icons/menu/iconFaq";
 import { IconApartment } from "../components/icons/menu/iconApartment";
 
-export const TABS: TABS_KEY_TYPE[]= [
+export const TABS: TABS_KEY_TYPE[] = [
   {
     es: "Inicio",
     en: "Home",
@@ -39,43 +39,43 @@ export const TABS: TABS_KEY_TYPE[]= [
     es: "Preguntas frecuentes",
     en: "FAQ",
   },
-]
+];
 
 export const TAB_INFO: TABS_ICONS_TYPE[] = [
   {
     key: TABS[0],
     iconComponent: IconHome,
-    anchor: "home-section",
+    anchor: "inicio",
   },
   {
     key: TABS[1],
     iconComponent: IconCamera,
-    anchor: "gallery-section-title",
+    anchor: "galeria",
   },
   {
-    key:TABS[2],
+    key: TABS[2],
     iconComponent: IconMedalStar,
-    anchor: "services-section-title",
+    anchor: "servicios",
   },
   {
     key: TABS[3],
     iconComponent: IconApartment,
-    anchor: "apartment-section-title",
+    anchor: "apartamentos",
   },
   {
     key: TABS[4],
     iconComponent: IconPhone,
-    anchor: "contact-section-title",
+    anchor: "contactos",
   },
   {
     key: TABS[5],
     iconComponent: IconLocation,
-    anchor: "location-section-title",
+    anchor: "ubicacion",
   },
   {
     key: TABS[6],
     iconComponent: IconFaq,
-    anchor: "faq-section-title",
+    anchor: "faq",
   },
 ];
 

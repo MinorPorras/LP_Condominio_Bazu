@@ -2,11 +2,12 @@
   display: grid;
   gap: 10px;
   padding: 20px;
+  width: 100%;
 }
 
 /* Cambia el color del encabezado (botón) cuando está abierto */
-.faq-item .accordion-button:not(.collapsed) {
-  background-image: var(--lin-gradient-orange) !important;
+#faq-section .faq-item .accordion-button:not(.collapsed) {
+  background-image: var(--lin-gradient-orange);
   color: white;
   box-shadow: none;
 }

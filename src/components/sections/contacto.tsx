@@ -29,7 +29,7 @@ export function Contacto() {
       <header>
         <h2
           className="title blaze-orange-background"
-          id="contact-section-title"
+          id="contactos"
         >
           {text.title}
         </h2>
@@ -45,7 +45,7 @@ export function Contacto() {
         </div>
 
         <footer>
-          <button className="button-64" role="button" onClick={clickhandler}>
+          <button className="button-main-style" role="button" onClick={clickhandler}>
             <span className="text">{text.buttonText}</span>
           </button>
         </footer>

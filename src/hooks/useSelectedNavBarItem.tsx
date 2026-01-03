@@ -9,7 +9,7 @@ export function useMainNavBarItem() {
 
   return {
     selectedNavBarItem,
-    handleNavbarItemClick
+    handleNavbarItemClick,
   };
 }
 

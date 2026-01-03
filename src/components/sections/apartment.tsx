@@ -21,11 +21,11 @@ export function ApartmentGallery() {
     <>
       <h2
         className="title title-right spanFull smokey-rose-background"
-        id="apartment-section-title"
+        id="apartamentos"
       >
         {text.titleText}
       </h2>
-      <section id="apartment-section">
+      <section id="apartment-section" className="section-with-gallery">
         <p>{text.description}</p>
         <div className="gallery-carousel-container apartment-carousel">
           <GalleryCarousel

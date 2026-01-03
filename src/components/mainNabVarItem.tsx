@@ -13,7 +13,7 @@ export function MainNavBarItem({
       onClick={() => handleItemClick(text)}
       id={text}
       href={"#" + anchor}
-      className={`main-navbar-item button-64 ${
+      className={`main-navbar-item button-main-style ${
         selectedItem === text ? "active" : ""
       } ${isCollapsed ? "collapsed" : ""}`}
       aria-current={selectedItem === text ? "page" : undefined}

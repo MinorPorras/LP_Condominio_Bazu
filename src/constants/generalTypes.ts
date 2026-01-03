@@ -27,13 +27,13 @@ export type TABS_TYPE =
   | "FAQ";
 
 export type ANCHOR_IDS =
-  | "home-section"
-  | "gallery-section-title"
-  | "services-section-title"
-  | "apartment-section-title"
-  | "contact-section-title"
-  | "location-section-title"
-  | "faq-section-title";
+  | "inicio"
+  | "galeria"
+  | "servicios"
+  | "apartamentos"
+  | "contactos"
+  | "ubicacion"
+  | "faq";
 
 export interface carouseItem {
   src: string;
@@ -83,6 +83,14 @@ export interface LANGUAGE_SELECTOR_PROPS {
 }
 
 export interface ServiceItemProps {
+  name: Record<SUPPORTED_LANGS_ABR, string>;
+  IconComponent: React.ElementType;
+  isLeftAligned: boolean;
+  imgSrc?: string;
+  imgAlt?: Record<SUPPORTED_LANGS_ABR, string>;
+}
+
+export interface ServiceCardItemProps {
   name: string;
   IconComponent: React.ElementType;
   isLeftAligned: boolean;
@@ -90,6 +98,11 @@ export interface ServiceItemProps {
   imgAlt?: string;
 }
 
+export interface FAQItemProps {
+  question: Record<SUPPORTED_LANGS_ABR, string>;
+  answer: Record<SUPPORTED_LANGS_ABR, string>;
+  eventKey: string;
+}
 export interface AccordionFAQItemProps {
   question: string;
   answer: string;
