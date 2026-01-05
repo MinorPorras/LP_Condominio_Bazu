@@ -20,7 +20,7 @@ export function Servicios() {
         {SERVICE_ITEMS.map((service, index) => {
           return (
             <div
-              key={`services-section-${service.name}`}
+              key={`services-section-${service.name}-${index}`}
               className={`services-section-card-container ${
                 service.isLeftAligned ? "left-aligned" : ""
               }`}

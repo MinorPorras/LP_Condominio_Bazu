@@ -48,6 +48,15 @@
   user-select: none;
   margin: 0 10px;
   z-index: 1;
+  opacity: 0;
+  transform: translateX(100%);
+  will-change: transform, opacity
+}
+
+.section-with-gallery-text{
+  opacity: 0;
+  transform: translateX(300%);
+  will-change: transform, opacity
 }
 
 .gallery-carousel-container.apartment-carousel {

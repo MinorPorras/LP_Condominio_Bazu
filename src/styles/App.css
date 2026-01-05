@@ -34,6 +34,7 @@ body,
 #root {
   height: fit-content;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 /*Estilos de los títulos*/
@@ -109,6 +110,9 @@ p {
 .title-left {
   text-align: left;
   justify-self: start;
+  opacity: 0;
+  transform: translateX(-100%);
+  will-change: transform, opacity;
 }
 
 .title-right {
@@ -188,18 +192,22 @@ p {
 }
 
 /*Estilos de la sección de inicio*/
-#home-section {
+#inicio {
   height: fit-content;
   display: grid;
   grid-auto-rows: 1fr 1fr;
   gap: 20px;
 }
 
-#home-section h1 {
+#inicio h1 {
   text-align: center;
   margin-bottom: 20px;
   width: 100%;
   align-self: center;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .img-logo-container {
@@ -223,6 +231,8 @@ p {
   overflow: hidden;
   display: block;
   aspect-ratio: 4 / 3;
+  opacity: 0;
+  will-change: opacity;
 }
 
 .img-logo {
@@ -237,7 +247,10 @@ p {
   left: 0px;
   right: 0px;
   margin: auto;
-  aspect-ratio: 640 / 325
+  aspect-ratio: 640 / 325;
+  opacity: 0;
+  will-change: transform, opacity;
+  transform: translateY(-100px);
 }
 
 .icon-sz-1 {
@@ -280,7 +293,7 @@ p {
   }
 }
 
-@media screen and (min-width: 470px) and (max-width: 768px){
+@media screen and (min-width: 470px) and (max-width: 768px) {
   .img-logo {
     width: 50%;
   }

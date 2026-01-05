@@ -11,9 +11,11 @@
     "mobile": "concurrently --raw \"pnpm run dev\" \"ngrok http 5173\""
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
     "flag-icons": "^7.5.0",
+    "gsap": "^3.14.2",
     "pnpm": "^10.27.0",
     "react": "^19.2.0",
     "react-bootstrap": "^2.10.10",
