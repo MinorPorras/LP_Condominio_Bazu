@@ -27,6 +27,7 @@
     sans-serif;
   color: var(--smoky-rose);
   min-height: 100vh;
+  overflow: hidden;
 }
 
 html,

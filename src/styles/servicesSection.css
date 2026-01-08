@@ -9,7 +9,7 @@
 
 .services-section-card-container {
   display: grid;
-  grid-template-columns: minmax(200px, 3fr) minmax(100px, 1fr);
+  grid-template-columns: 1fr;
   gap: 10px;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
 }
 
 .services-section-card-container.left-aligned {
-  grid-template-columns: minmax(100px, 1fr) minmax(200px, 3fr);
+  grid-template-columns: 1fr;
 }
 
 .services-card {
@@ -38,7 +38,7 @@
 }
 
 .services-card.left-aligned {
-  grid-column: 1;
+  grid-column: 1/-1;
   grid-row: 1;
   padding-left: 10px;
   border-radius: 0 10px 10px 0;

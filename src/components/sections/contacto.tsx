@@ -47,23 +47,12 @@ export function Contacto() {
         toggleActions: "play none none reverse",
         scrub: 1,
       },
-    }).from(".button-main-style", {
-      y: -100,
-      opacity: 0,
-      duration: 0.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".button-main-style",
-        start: "top 90%",
-        end: "center 80%",
-        toggleActions: "play none none reverse",
-        scrub: 1,
-      },
-    }, "-=0.5");
+    });
 
-    return () => {
-      tl.kill();
-    }
+      return () => {
+        gsap.set(".contact-section-content", { clearProps: "all" });
+        gsap.set(".title", { clearProps: "all" });
+      };
   }, { scope: containerRef });
 
   const text = {

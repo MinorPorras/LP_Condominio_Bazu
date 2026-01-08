@@ -27,10 +27,10 @@ export function Faq() {
       if (!titleRef.current) return;
 
       const splitText = new SplitText(titleRef.current, {
-        type: "chars",
+        type: "words",
       });
 
-      gsap.from(splitText.chars, {
+      gsap.from(splitText.words, {
         x: -100,
         opacity: 0,
         duration: 1,

@@ -14,39 +14,28 @@ if (typeof window !== "undefined") {
 export function Ubicacion() {
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    if (!containerRef.current) {
-      return;
-    }
+  useGSAP(
+    () => {
+      if (!containerRef.current) {
+        return;
+      }
 
-    const tl = gsap.timeline();
-
-    tl.from(".title-center", {
-      scaleX: 0.5,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".title-center",
-        start: "top 70%",
-        end: "bottom 40%",
-        toggleActions: "play none none reverse",
-        scrub: 1,
-      },
-    }).from(".maps-iframe-container", {
-      scale: 0.5,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".maps-iframe-container",
-        start: "top 100%",
-        end: "bottom 80%",
-        toggleActions: "play none none reverse",
-        scrub: 1,
-      },
-    });
-  }, { scope: containerRef });
+      gsap.from(".title-center", {
+        scaleX: 0.5,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".title-center",
+          start: "top 70%",
+          end: "bottom 40%",
+          toggleActions: "play none none reverse",
+          scrub: 1,
+        },
+      })
+    },
+    { scope: containerRef }
+  );
 
   const { language } = useLanguage();
 
