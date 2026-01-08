@@ -10,13 +10,12 @@ export function MainNavBarItem({
 }: mainNavbarItem) {
   return (
     <a
-      onClick={() => handleItemClick(text)}
-      id={text}
+      onClick={() => handleItemClick(anchor)}
       href={"#" + anchor}
       className={`main-navbar-item button-main-style ${
-        selectedItem === text ? "active" : ""
+        selectedItem === anchor ? "active" : ""
       } ${isCollapsed ? "collapsed" : ""}`}
-      aria-current={selectedItem === text ? "page" : undefined}
+      aria-current={selectedItem === anchor ? "page" : undefined}
     >
       <span>
         <IconComponent color="#F9DFD7" className="main-navbar-icon" />

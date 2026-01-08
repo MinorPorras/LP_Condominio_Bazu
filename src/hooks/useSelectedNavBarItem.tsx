@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export function useMainNavBarItem() {
-  const [selectedNavBarItem, setSelectedNavBarItem] = useState("Home");
+  const [selectedNavBarItem, setSelectedNavBarItem] = useState<string>("inicio"); 
 
-  const handleNavbarItemClick = (item: string) => {
-    setSelectedNavBarItem(item);
+  const handleNavbarItemClick = (anchor: string) => {
+    setSelectedNavBarItem(anchor);
   };
 
   return {

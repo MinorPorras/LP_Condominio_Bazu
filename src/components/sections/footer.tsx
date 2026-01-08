@@ -7,10 +7,27 @@ import logoNegro from "../../assets/img_logo_condo_bazu_negro.webp";
 import { countryCode, phoneNumber } from "../../constants/generalConst";
 import { whastappUrl } from "../../constants/urlConstants";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export function Footer() {
+  const logoRef = useRef<HTMLImageElement>(null);
   const { language, setLanguage } = useLanguage();
 
-  // Textos traducidos simples
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.to(
+        logoRef.current,
+        { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" },
+        "-=0.5"
+      )})
+
   const t = {
     es: {
       logoAlt: "Logo de Condominio Bazú en color negro",
@@ -39,7 +56,7 @@ export function Footer() {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-brand">
-          <img src={logoNegro} alt={t.logoAlt} className="img-logo" loading="lazy"/>
+          <img src={logoNegro} alt={t.logoAlt} className="img-logo" loading="lazy" ref={logoRef} />
         </div>
 
         <div className="footer-language-selector-container">

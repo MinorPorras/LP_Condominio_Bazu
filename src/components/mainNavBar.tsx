@@ -43,7 +43,7 @@ export function MainNavBar() {
               text={isSpanish ? key.es : key.en}
               anchor={anchor}
               selectedItem={selectedNavBarItem}
-              handleItemClick={handleNavbarItemClick}
+              handleItemClick={() => handleNavbarItemClick(anchor)}
               isCollapsed={isCollapsed}
               IconComponent={iconComponent}
             />

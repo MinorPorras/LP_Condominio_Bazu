@@ -101,6 +101,10 @@ p {
   transition: background-color color filter 0.3s ease;
 }
 
+.section-container{
+  display: grid;
+}
+
 .title {
   text-align: center;
   width: 100%;
@@ -118,6 +122,9 @@ p {
 .title-right {
   text-align: right;
   justify-self: end;
+  opacity: 0;
+  transform: translateX(100%);
+  will-change: transform, opacity;
 }
 
 .title-center {

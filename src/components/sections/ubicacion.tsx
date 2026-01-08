@@ -2,8 +2,52 @@ import IconWaze from "../icons/general/iconWaze";
 import { WAZE_LOCATION_URL } from "../../constants/urlConstants";
 import { useLanguage } from "../../hooks/useLanguage";
 import { iframeMapUrl } from "../../constants/urlConstants";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export function Ubicacion() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    if (!containerRef.current) {
+      return;
+    }
+
+    const tl = gsap.timeline();
+
+    tl.from(".title-center", {
+      scaleX: 0.5,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".title-center",
+        start: "top 70%",
+        end: "bottom 40%",
+        toggleActions: "play none none reverse",
+        scrub: 1,
+      },
+    }).from(".maps-iframe-container", {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".maps-iframe-container",
+        start: "top 100%",
+        end: "bottom 80%",
+        toggleActions: "play none none reverse",
+        scrub: 1,
+      },
+    });
+  }, { scope: containerRef });
+
   const { language } = useLanguage();
 
   const text = {
@@ -29,7 +73,7 @@ export function Ubicacion() {
   }[language];
 
   return (
-    <>
+    <article className="section-container" ref={containerRef}>
       <h2
         className="title-center spanFull mauve-shadow-background"
         id="ubicacion"
@@ -63,7 +107,7 @@ export function Ubicacion() {
           </div>
         </div>
       </section>
-    </>
+    </article>
   );
 }
 

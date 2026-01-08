@@ -23,6 +23,7 @@
   gap: 10px;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 .maps-iframe {
   width: 100%;

@@ -24,7 +24,11 @@ export function Inicio() {
     const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
     tl.to(backgroundRef.current, { opacity: 1, duration: 1 })
-      .to(logoRef.current, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" }, "-=0.5")
+      .to(
+        logoRef.current,
+        { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" },
+        "-=0.5"
+      )
       .to(titleRef.current, { opacity: 1, x: 0, duration: 0.7 }, "-=0.8");
   });
 
